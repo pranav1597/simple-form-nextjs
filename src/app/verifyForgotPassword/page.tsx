@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, useCallback} from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import axios from 'axios'
@@ -14,17 +14,24 @@ export default function ForgotPasswordPage() {
     const [buttonDisabled, setButtonDisabled] = useState(true)
     const [token, setToken] = useState("")
 
-    const onForgotPassword = async () => {
+    const onForgotPassword = useCallback(async () => {
         try {
             const response = await axios.post('/api/users/verifyForgotPassword', { token, newPassword: newPassword.password})
             console.log(response.data)
             toast.success("Password changed successfully")
             router.push('/login')
-        } catch (error: any) {
-            toast.error(error.message)
-            console.log(error.message.data)
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                toast.error(
+                    error.response?.data?.message || "Something went wrong"
+                );
+                console.log(error.response?.data);
+                } else {
+                toast.error("An unexpected error occurred");
+                console.log(error);
+            }
         }
-    }
+    }, [token, newPassword.password, router])
 
     useEffect(() => {
       const urlToken = window.location.search.split("=")[1];
@@ -36,7 +43,7 @@ export default function ForgotPasswordPage() {
       if (token.length > 0) {
         onForgotPassword();
       }
-    }, [token]);
+    }, [token, onForgotPassword]);
 
     useEffect(() => {
         if(newPassword.password === confirmPassword && newPassword.password.length > 0) {

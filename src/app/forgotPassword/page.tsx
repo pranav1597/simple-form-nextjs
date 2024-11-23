@@ -5,7 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 export default function ForgotPassword() {
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState<string>("");
 
     const onForgotPassword = async () => {
         try {
