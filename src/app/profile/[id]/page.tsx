@@ -4,7 +4,7 @@ export default async function UserProfile({params}: any) {
   const { id } = await params;
   console.log("id ", id);
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center ">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-slate-500">
       <h1>Profile</h1>
       <hr />
       <p className="text-2xl ">

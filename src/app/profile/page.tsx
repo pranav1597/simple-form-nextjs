@@ -32,7 +32,7 @@ export default function ProfilePage() {
     }
 
     return (
-        <div className="flex flex-col min-h-screen items-center justify-center ">
+        <div className="flex flex-col min-h-screen items-center justify-center bg-slate-500">
             <h1>Profile</h1>
             <hr />
             <p>Profile Page</p>

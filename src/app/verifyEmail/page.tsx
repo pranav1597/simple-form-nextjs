@@ -33,7 +33,7 @@ export default function VerifyEmailPage() {
     }, [token])
 
     return (
-      <div className="flex flex-col min-h-screen items-center justify-center py-2 ">
+      <div className="flex flex-col min-h-screen items-center justify-center py-2 bg-slate-500">
         <h1 className="text-4xl ">Verify Email</h1>
         <h2 className="p-2 bg-violet-600 text-white break-words w-full max-w-xs sm:max-w-sm md:max-w-md overflow-hidden">
           {token ? `Token: ${token}` : "No token found"}

@@ -52,7 +52,7 @@ export default function SignupPage() {
   return (
     
 
-    <div className="flex flex-col min-h-screen items-center justify-center p-3 ">
+    <div className="flex flex-col min-h-screen items-center justify-center p-3 bg-slate-500">
       <h1 className="text-2xl text-cyan-200 ">Signup</h1>
 
       <span

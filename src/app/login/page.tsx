@@ -42,7 +42,7 @@ export default function LoginPage() {
   }, [user])
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center p-5 ">
+    <div className="flex flex-col min-h-screen items-center justify-center p-5 bg-slate-800">
       <h1 className="text-2xl text-cyan-200 mb-2">Login</h1>
       <hr />
       {/* <label htmlFor="email" className="text-left">email</label> */}
@@ -104,10 +104,10 @@ export default function LoginPage() {
       )}
 
       {/* signup link */}
-      <Link href="/signup" className="p-2  rounded-lg mb-2">
+      <Link href="/signup" className="p-2  rounded-lg mb-2 text-blue-600">
         To Signup, Click Here{" "}
       </Link>
-      <Link href="/forgotPassword" className="p-2  rounded-lg mb-2 ">
+      <Link href="/forgotPassword" className="p-2  rounded-lg mb-2 text-blue-600">
         Forgot Password?{" "}
       </Link>
     </div>

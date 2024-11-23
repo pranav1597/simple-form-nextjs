@@ -19,7 +19,7 @@ export default function ForgotPassword() {
     }
 
     return (
-        <div className="flex flex-col min-h-screen items-center justify-center py-2 " >
+        <div className="flex flex-col min-h-screen items-center justify-center py-2 bg-slate-500" >
             <h1 className="text-2xl">Enter email</h1>
             <hr />
             <input

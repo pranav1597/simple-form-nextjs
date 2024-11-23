@@ -48,7 +48,7 @@ export default function ForgotPasswordPage() {
     },[newPassword, confirmPassword])
 
     return (
-        <div className="flex flex-col min-h-screen items-center justify-center py-2">
+        <div className="flex flex-col min-h-screen items-center justify-center py-2 bg-slate-500">
             <h1 className="text-4xl ">Forgot Password</h1>
             <hr />
             <label htmlFor="password">New Password</label>
